@@ -22,7 +22,7 @@ let saludo = () => {
 };
 
 pedirEdades = () => {
-	for (let i = 0; i <= 5; i++) {
+	for (let i = 0; i <= 4; i++) {
 		arrayEdades[i] = parseInt(prompt(`Dame la edad ${i + 1}`));
 	}
 };
