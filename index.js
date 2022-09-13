@@ -1,25 +1,37 @@
-let edades = [35,16,40,18,19,20,22,25,32,15,17]
+let arrayEdades = [];
 
-
-function ordenar (arr){
-  return arr.sort((a,b) => a - b)
+function ordenar(arr) {
+	return arr.sort((a, b) => a - b);
 }
 
-function mayoresEdad (arr, age){
-  ordenar(edades)
-  return arr.filter(rango => rango >= age)
+function mayoresEdad(arrayEdades, age) {
+	ordenar(arrayEdades);
+	return arrayEdades.filter((rango) => rango >= age);
 }
 
-function cantidad (arr, age){
-  if(arr.includes(age)){
-    return arr.filter(rango => rango >= age).length
-  }
-
-  return `En total son: ${age} que son mayores de edad`
-
+function cantidad(arrayEdades, age) {
+	if (arrayEdades.includes(age)) {
+		return arrayEdades.filter((rango) => rango >= age).length;
+	}
 }
 
-alert(edades)
-alert(ordenar(edades))
-alert(mayoresEdad(edades, 18))
-alert(cantidad(edades, 18))
+let saludo = () => {
+	alert(
+		"Este programa ordena edades, te muestra los mayores de edad y cuenta cuantos son mayores de edad "
+	);
+};
+
+pedirEdades = () => {
+	for (let i = 0; i <= 3; i++) {
+		arrayEdades[i] = parseInt(prompt(`Dame la edad ${i + 1}`));
+	}
+};
+
+saludo();
+pedirEdades();
+
+alert(`Edades Introducidas ${arrayEdades}`);
+alert(`Arreglo ordenado ${ordenar(arrayEdades)}`);
+
+alert(`Mayores edad ${mayoresEdad(arrayEdades, 18)}`);
+alert(`Cuantos Mayores edad ${cantidad(arrayEdades, 18)}`);
